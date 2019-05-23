@@ -43,14 +43,14 @@ const eslintDefaultRules = {
 };
 
 function task(config: Config) {
-  const { eslintRules } = config.values();
+  const { eslintRules, node } = config.values();
 
   const eslintrc = json(configFile);
   eslintrc.merge({
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
     env: {
-      node: true
+      node
     },
     rules: Object.assign({}, eslintDefaultRules, eslintRules)
   });

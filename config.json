@@ -25,5 +25,7 @@
     }]
   },
 
+  "node": true,
+
   "typescriptOutDir": "dist"
 }

@@ -23,7 +23,7 @@ function task(config: Config) {
       },
       moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
       preset: "ts-jest/presets/default",
-      testEnvironment: "node",
+      testEnvironment: configValues.node ? "node" : undefined,
       testMatch: ["**/__tests__/*.+(ts|tsx|js|jsx)"],
       testPathIgnorePatterns: ["/node_modules/", `<rootDir>/${outDir}/`],
       transform: {
@@ -31,6 +31,7 @@ function task(config: Config) {
       }
     }
   });
+
   pkg.appendScript("test", "npm run test:jest");
 
   // TODO Babel Implement later

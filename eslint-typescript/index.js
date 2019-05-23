@@ -36,13 +36,13 @@ const eslintDefaultRules = {
     "import/no-unresolved": "off"
 };
 function task(config) {
-    const { eslintRules } = config.values();
+    const { eslintRules, node } = config.values();
     const eslintrc = mrm_core_1.json(configFile);
     eslintrc.merge({
         extends: eslintExtends,
         parserOptions: { project: "./tsconfig.json" },
         env: {
-            node: true
+            node
         },
         rules: Object.assign({}, eslintDefaultRules, eslintRules)
     });
