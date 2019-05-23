@@ -33,6 +33,9 @@
         "properties": "never",
         "ignoreDestructuring": true
       }
-    ]
+    ],
+    "consistent-return": "off",
+    "no-undef": "off",
+    "import/no-unresolved": "off"
   }
 }
