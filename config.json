@@ -1,4 +1,8 @@
 {
+  "name": "Takashi Chiba",
+
+  "licenseFile": "MIT-LICENSE",
+
   "eslintExtensions": ".ts",
 
   "eslintRules": {
