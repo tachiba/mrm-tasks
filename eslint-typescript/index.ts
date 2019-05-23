@@ -8,7 +8,7 @@ interface ConfigValues {
   eslintRules: any;
 }
 
-const configFile = '.eslintrc.json';
+const configFile = ".eslintrc.json";
 const packages = [
   "eslint",
   "@typescript-eslint/eslint-plugin",
@@ -33,13 +33,21 @@ const eslintExtends = [
   // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
   "prettier/@typescript-eslint"
 ];
-const eslintGitIgnores = [
-  ".eslintcache"
-];
-const eslintIgnores = [
-  "**/__tests__/*.ts",
-  "node_modules/"
-];
+const eslintGitIgnores = [".eslintcache"];
+const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
+const eslintDefaultRules = {
+  // TypeScript
+
+  // False positive?
+  "consistent-return": "off",
+
+  // False positive?
+  // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
+  "no-undef": "off",
+
+  // eslint-plugin-node is not works properly??
+  "import/no-unresolved": "off"
+};
 
 function task(config: Config) {
   const { eslintRules } = config.values();
@@ -51,38 +59,26 @@ function task(config: Config) {
     env: {
       node: true
     },
-    rules: eslintRules || {
-      // TypeScript
-
-      // False positive?
-      "consistent-return": "off",
-
-      // False positive?
-      // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
-      "no-undef": "off",
-
-      // eslint-plugin-node is not works properly??
-      "import/no-unresolved": "off"
-    },
+    rules: Object.assign({}, eslintDefaultRules, eslintRules)
   });
   eslintrc.save();
 
-  lines('.eslintignore')
+  lines(".eslintignore")
     .add(eslintIgnores)
     .save();
 
-  lines('.gitignore')
+  lines(".gitignore")
     .add(eslintGitIgnores)
     .save();
 
   packageJson()
-    .setScript('lint', 'eslint . --cache --fix --ext .ts,.tsx')
-    .prependScript('pretest', 'npm run lint')
+    .setScript("lint", "eslint . --cache --fix --ext .ts,.tsx")
+    .prependScript("pretest", "npm run lint")
     .save();
 
   install(packages);
 }
 
-task.description = 'Adds ESLint';
+task.description = "Add ESLint";
 
 module.exports = task;

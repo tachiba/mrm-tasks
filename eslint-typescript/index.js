@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mrm_core_1 = require("mrm-core");
-const configFile = '.eslintrc.json';
+const configFile = ".eslintrc.json";
 const packages = [
     "eslint",
     "@typescript-eslint/eslint-plugin",
@@ -23,13 +23,18 @@ const eslintExtends = [
     // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
     "prettier/@typescript-eslint"
 ];
-const eslintGitIgnores = [
-    ".eslintcache"
-];
-const eslintIgnores = [
-    "**/__tests__/*.ts",
-    "node_modules/"
-];
+const eslintGitIgnores = [".eslintcache"];
+const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
+const eslintDefaultRules = {
+    // TypeScript
+    // False positive?
+    "consistent-return": "off",
+    // False positive?
+    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
+    "no-undef": "off",
+    // eslint-plugin-node is not works properly??
+    "import/no-unresolved": "off"
+};
 function task(config) {
     const { eslintRules } = config.values();
     const eslintrc = mrm_core_1.json(configFile);
@@ -39,29 +44,20 @@ function task(config) {
         env: {
             node: true
         },
-        rules: eslintRules || {
-            // TypeScript
-            // False positive?
-            "consistent-return": "off",
-            // False positive?
-            // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
-            "no-undef": "off",
-            // eslint-plugin-node is not works properly??
-            "import/no-unresolved": "off"
-        },
+        rules: Object.assign({}, eslintDefaultRules, eslintRules)
     });
     eslintrc.save();
-    mrm_core_1.lines('.eslintignore')
+    mrm_core_1.lines(".eslintignore")
         .add(eslintIgnores)
         .save();
-    mrm_core_1.lines('.gitignore')
+    mrm_core_1.lines(".gitignore")
         .add(eslintGitIgnores)
         .save();
     mrm_core_1.packageJson()
-        .setScript('lint', 'eslint . --cache --fix --ext .ts,.tsx')
-        .prependScript('pretest', 'npm run lint')
+        .setScript("lint", "eslint . --cache --fix --ext .ts,.tsx")
+        .prependScript("pretest", "npm run lint")
         .save();
     mrm_core_1.install(packages);
 }
-task.description = 'Adds ESLint';
+task.description = "Add ESLint";
 module.exports = task;
