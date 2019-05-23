@@ -2,7 +2,10 @@
 
 const { json, packageJson, install } = require('mrm-core');
 
-const packages = ['typescript'];
+const packages = [
+  'typescript',
+  '@types/node'
+];
 
 function task() {
   // tsconfig.json
