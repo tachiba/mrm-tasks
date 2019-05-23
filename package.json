@@ -1,0 +1,11 @@
+{
+  "name": "mrm-tasks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/tachiba/mrm-tasks.git",
+  "author": "Takashi Chiba <work@tachiba.jp>",
+  "license": "MIT",
+  "dependencies": {
+    "mrm-core": "^3.3.0"
+  }
+}
