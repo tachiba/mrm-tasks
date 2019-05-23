@@ -1,11 +1,17 @@
 import { json, packageJson, install } from "mrm-core";
+import { Config } from "../lib/config";
 
 const packages = ["typescript", "@types/node"];
 
-function task() {
+function task(config: Config) {
+  const configValues = config.values();
+  const outDir = configValues.typescriptOutDir || "dist";
+
   json("tsconfig.json")
     .merge({
       compilerOptions: {
+        outDir: `./${outDir}`,
+
         target: "es2017",
         lib: ["esnext", "es2017"],
 

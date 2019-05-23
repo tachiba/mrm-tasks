@@ -1,12 +1,5 @@
 import { json, packageJson, lines, install } from "mrm-core";
-
-interface Config {
-  values(): ConfigValues;
-}
-
-interface ConfigValues {
-  eslintRules: any;
-}
+import { Config } from "../lib/config";
 
 const configFile = ".eslintrc.json";
 const packages = [

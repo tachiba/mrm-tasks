@@ -2,10 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mrm_core_1 = require("mrm-core");
 const packages = ["typescript", "@types/node"];
-function task() {
+function task(config) {
+    const configValues = config.values();
+    const outDir = configValues.typescriptOutDir || "dist";
     mrm_core_1.json("tsconfig.json")
         .merge({
         compilerOptions: {
+            outDir: `./${outDir}`,
             target: "es2017",
             lib: ["esnext", "es2017"],
             module: "commonjs",

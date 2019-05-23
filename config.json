@@ -23,5 +23,7 @@
       "properties": "never",
       "ignoreDestructuring": true
     }]
-  }
+  },
+
+  "typescriptOutDir": "dist"
 }
