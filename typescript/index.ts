@@ -31,6 +31,7 @@ function task(config: Config) {
 
   packageJson()
     .appendScript("pretest", "tsc --noEmit")
+    .set("main", `${outDir}/index.js`)
     .save();
 
   install(packages);
