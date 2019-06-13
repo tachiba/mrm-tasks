@@ -5,6 +5,7 @@ const configFile = ".eslintrc.json";
 const packages = [
   "eslint",
   "@typescript-eslint/eslint-plugin",
+  "@typescript-eslint/parser",
 
   "eslint-config-airbnb-base",
   "eslint-config-prettier",
