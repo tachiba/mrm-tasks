@@ -33,6 +33,12 @@ function task(config) {
     // TODO Babel Implement later
     // TODO React Implement later
     pkg.save();
+    mrm_core_1.json("tsconfig.json")
+        .merge({
+        exclude: [
+            "**/__tests__/*"
+        ]
+    });
     mrm_core_1.lines(".gitignore")
         .add("coverage/")
         .save();

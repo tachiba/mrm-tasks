@@ -24,8 +24,11 @@ function task(config: Config) {
         experimentalDecorators: true,
         emitDecoratorMetadata: true,
 
-        pretty: true
-      }
+        pretty: true,
+      },
+      include: [
+        "./src/**/*"
+      ]
     })
     .save();
 

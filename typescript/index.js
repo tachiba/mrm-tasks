@@ -17,8 +17,11 @@ function task(config) {
             noUnusedLocals: true,
             experimentalDecorators: true,
             emitDecoratorMetadata: true,
-            pretty: true
-        }
+            pretty: true,
+        },
+        include: [
+            "./src/**/*"
+        ]
     })
         .save();
     mrm_core_1.packageJson()

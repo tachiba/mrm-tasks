@@ -1,4 +1,4 @@
-import { lines, packageJson, install, file } from "mrm-core";
+import { lines, packageJson, install, file, json } from "mrm-core";
 import { Config } from "../lib/config";
 
 const packages = ["jest", "ts-jest", "@types/jest"];
@@ -38,6 +38,13 @@ function task(config: Config) {
   // TODO React Implement later
 
   pkg.save();
+
+  json("tsconfig.json")
+    .merge({
+      exclude: [
+        "**/__tests__/*"
+      ]
+    });
 
   lines(".gitignore")
     .add("coverage/")
