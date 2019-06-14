@@ -9,15 +9,15 @@ function task(config) {
         .merge({
         compilerOptions: {
             outDir: `./${outDir}`,
-            target: "es2017",
-            lib: ["esnext", "es2017"],
-            module: "commonjs",
+            // nodejs10
+            target: "es2018",
             moduleResolution: "node",
             strict: true,
             noUnusedLocals: true,
             experimentalDecorators: true,
             emitDecoratorMetadata: true,
             pretty: true,
+            sourceMap: true
         },
         include: [
             "./src/**/*"
@@ -30,5 +30,5 @@ function task(config) {
         .save();
     mrm_core_1.install(packages);
 }
-task.description = "Add TypeScript";
+task.description = "Add TypeScript for nodejs10";
 module.exports = task;

@@ -12,10 +12,8 @@ function task(config: Config) {
       compilerOptions: {
         outDir: `./${outDir}`,
 
-        target: "es2017",
-        lib: ["esnext", "es2017"],
+        target: "es5",
 
-        module: "commonjs",
         moduleResolution: "node",
 
         strict: true,
@@ -25,6 +23,7 @@ function task(config: Config) {
         emitDecoratorMetadata: true,
 
         pretty: true,
+        sourceMap: true
       },
       include: [
         "./src/**/*"
@@ -39,6 +38,6 @@ function task(config: Config) {
 
   install(packages);
 }
-task.description = "Add TypeScript";
+task.description = "Add TypeScript for browser";
 
 module.exports = task;
