@@ -46,10 +46,6 @@ function task(config: Config) {
       ]
     });
 
-  lines(".gitignore")
-    .add("coverage/")
-    .save();
-
   if (!pkg.get("private")) {
     lines(".npmignore")
       .add("__tests__/")

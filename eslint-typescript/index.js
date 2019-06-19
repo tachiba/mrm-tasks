@@ -24,7 +24,6 @@ const eslintExtends = [
     // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
     "prettier/@typescript-eslint"
 ];
-const eslintGitIgnores = [".eslintcache"];
 const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
 const eslintDefaultRules = {
     // TypeScript
@@ -50,9 +49,6 @@ function task(config) {
     eslintrc.save();
     mrm_core_1.lines(".eslintignore")
         .add(eslintIgnores)
-        .save();
-    mrm_core_1.lines(".gitignore")
-        .add(eslintGitIgnores)
         .save();
     mrm_core_1.packageJson()
         .setScript("lint", "eslint . --cache --fix --ext .ts,.tsx")

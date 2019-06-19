@@ -27,7 +27,6 @@ const eslintExtends = [
   // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
   "prettier/@typescript-eslint"
 ];
-const eslintGitIgnores = [".eslintcache"];
 const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
 const eslintDefaultRules = {
   // TypeScript
@@ -59,10 +58,6 @@ function task(config: Config) {
 
   lines(".eslintignore")
     .add(eslintIgnores)
-    .save();
-
-  lines(".gitignore")
-    .add(eslintGitIgnores)
     .save();
 
   packageJson()

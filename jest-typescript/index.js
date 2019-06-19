@@ -39,9 +39,6 @@ function task(config) {
             "**/__tests__/*"
         ]
     });
-    mrm_core_1.lines(".gitignore")
-        .add("coverage/")
-        .save();
     if (!pkg.get("private")) {
         mrm_core_1.lines(".npmignore")
             .add("__tests__/")
