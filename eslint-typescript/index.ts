@@ -43,17 +43,21 @@ const eslintDefaultRules = {
 };
 
 function task(config: Config) {
-  const { eslintRules, node } = config.values();
+  const { eslintRules, env } = config.values();
 
   const eslintrc = json(configFile);
   eslintrc.merge({
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
-    env: {
-      node
-    },
     rules: Object.assign({}, eslintDefaultRules, eslintRules)
   });
+  if (typeof env !== "undefined") {
+    eslintrc.merge({
+      env: {
+        [env]: true
+      }
+    });
+  }
   eslintrc.save();
 
   lines(".eslintignore")

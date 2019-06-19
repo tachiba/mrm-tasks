@@ -7,7 +7,7 @@ interface ConfigValues {
 
   eslintRules: any;
 
-  node: boolean | undefined;
+  env: string | undefined;
 }
 
 export { ConfigValues, Config };
