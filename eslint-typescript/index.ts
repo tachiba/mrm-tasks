@@ -41,6 +41,16 @@ const eslintDefaultRules = {
   // eslint-plugin-node is not works properly??
   "import/no-unresolved": "off"
 };
+const overrides = [
+  {
+    // https://github.com/typescript-eslint/typescript-eslint/issues/291
+    files: ["*.ts", "*.tsx"],
+    rules: {
+      "no-dupe-class-members": "off"
+    }
+  }
+];
+
 
 function task(config: Config) {
   const { eslintRules, env } = config.values();
@@ -49,7 +59,8 @@ function task(config: Config) {
   eslintrc.merge({
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
-    rules: Object.assign({}, eslintDefaultRules, eslintRules)
+    rules: Object.assign({}, eslintDefaultRules, eslintRules),
+    overrides
   });
   if (typeof env !== "undefined") {
     eslintrc.merge({
