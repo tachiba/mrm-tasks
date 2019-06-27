@@ -24,7 +24,6 @@ function task(config) {
     })
         .save();
     mrm_core_1.packageJson()
-        .appendScript("pretest", "tsc --noEmit")
         .set("main", `${outDir}/index.js`)
         .save();
     mrm_core_1.install(packages);

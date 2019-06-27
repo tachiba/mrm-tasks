@@ -33,7 +33,6 @@ function task(config: Config) {
     .save();
 
   packageJson()
-    .appendScript("pretest", "tsc --noEmit")
     .set("main", `${outDir}/index.js`)
     .save();
 
