@@ -3,9 +3,9 @@ import { Config } from "../lib/config";
 
 function task(config: Config) {
   packageJson()
-    .appendScript("deploy", "yarn build && firebase deploy")
+    .appendScript("deploy", "firebase deploy --only hosting")
     .save();
 }
-task.description = "Add Firebase";
+task.description = "Add Firebase Hosting";
 
 module.exports = task;

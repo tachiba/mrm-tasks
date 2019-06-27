@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mrm_core_1 = require("mrm-core");
 function task(config) {
     mrm_core_1.packageJson()
-        .appendScript("deploy", "yarn build && firebase deploy")
+        .appendScript("deploy", "firebase deploy --only hosting")
         .save();
 }
-task.description = "Add Firebase";
+task.description = "Add Firebase Hosting";
 module.exports = task;
