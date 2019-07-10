@@ -4,6 +4,13 @@ const mrm_core_1 = require("mrm-core");
 const packages = ["@google-cloud/functions-framework"];
 const devPackages = ["@types/express"];
 function task(config) {
+    mrm_core_1.json("tsconfig.json")
+        .merge({
+        compilerOptions: {
+            module: "commonjs"
+        }
+    })
+        .save();
     mrm_core_1.install(packages, {
         dev: false
     });

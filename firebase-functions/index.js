@@ -18,6 +18,13 @@ function task(config) {
         .appendScript("deploy", "firebase deploy --only functions")
         .appendScript("logs", "firebase functions:log")
         .save();
+    mrm_core_1.json("tsconfig.json")
+        .merge({
+        compilerOptions: {
+            module: "commonjs"
+        }
+    })
+        .save();
     mrm_core_1.install(packages, { dev: false });
     mrm_core_1.install(devPackages, { dev: true });
 }

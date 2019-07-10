@@ -1,4 +1,4 @@
-import { install, packageJson } from "mrm-core";
+import { install, json, packageJson } from "mrm-core";
 import { Config } from "../lib/config";
 
 const packages = ["firebase-admin", "firebase-functions"];
@@ -18,6 +18,14 @@ function task(config: Config) {
     .appendScript("start", "npm run shell")
     .appendScript("deploy", "firebase deploy --only functions")
     .appendScript("logs", "firebase functions:log")
+    .save();
+
+  json("tsconfig.json")
+    .merge({
+      compilerOptions: {
+        module: "commonjs"
+      }
+    })
     .save();
 
   install(packages, { dev : false });
