@@ -28,6 +28,9 @@ function task(config: Config) {
       },
       include: [
         "./src/**/*"
+      ],
+      exclude: [
+        "./node_modules"
       ]
     })
     .save();
