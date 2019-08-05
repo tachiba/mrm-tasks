@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mrm_core_1 = require("mrm-core");
 const COPY_FILES = [
     // Cloud Function may create a default file which ignores dist/
-    ".gcloudignore",
+    ".gcloudignore"
 ];
 const packages = ["@google-cloud/functions-framework"];
 const devPackages = ["@types/express"];

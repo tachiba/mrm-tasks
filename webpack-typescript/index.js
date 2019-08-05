@@ -18,10 +18,7 @@ const packages = [
 const WEBPACK_CONFIG_FILE_NAME = "webpack.config.js";
 const POST_CSS_CONFIG_FILE_NAME = "postcss.config.js";
 function task(config) {
-    mrm_core_1.copyFiles(__dirname, [
-        WEBPACK_CONFIG_FILE_NAME,
-        POST_CSS_CONFIG_FILE_NAME,
-    ]);
+    mrm_core_1.copyFiles(__dirname, [WEBPACK_CONFIG_FILE_NAME, POST_CSS_CONFIG_FILE_NAME]);
     mrm_core_1.install(packages);
     mrm_core_1.packageJson()
         .setScript("build", "npx webpack --mode production")

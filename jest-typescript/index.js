@@ -17,7 +17,7 @@ function task(config) {
             globals: {
                 "ts-jest": {
                     tsConfig: "tsconfig.json"
-                },
+                }
             },
             moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
             preset: "ts-jest/presets/default",
@@ -33,11 +33,8 @@ function task(config) {
     // TODO Babel Implement later
     // TODO React Implement later
     pkg.save();
-    mrm_core_1.json("tsconfig.json")
-        .merge({
-        exclude: [
-            "**/__tests__/*"
-        ]
+    mrm_core_1.json("tsconfig.json").merge({
+        exclude: ["**/__tests__/*"]
     });
     if (!pkg.get("private")) {
         mrm_core_1.lines(".npmignore")

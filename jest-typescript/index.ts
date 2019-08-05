@@ -19,7 +19,7 @@ function task(config: Config) {
       globals: {
         "ts-jest": {
           tsConfig: "tsconfig.json"
-        },
+        }
       },
       moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
       preset: "ts-jest/presets/default",
@@ -39,12 +39,9 @@ function task(config: Config) {
 
   pkg.save();
 
-  json("tsconfig.json")
-    .merge({
-      exclude: [
-        "**/__tests__/*"
-      ]
-    });
+  json("tsconfig.json").merge({
+    exclude: ["**/__tests__/*"]
+  });
 
   if (!pkg.get("private")) {
     lines(".npmignore")

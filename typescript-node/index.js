@@ -19,12 +19,8 @@ function task(config) {
             pretty: true,
             sourceMap: true
         },
-        include: [
-            "./src/**/*"
-        ],
-        exclude: [
-            "./node_modules"
-        ]
+        include: ["./src/**/*"],
+        exclude: ["./node_modules"]
     })
         .save();
     mrm_core_1.packageJson()

@@ -25,12 +25,8 @@ function task(config: Config) {
         pretty: true,
         sourceMap: true
       },
-      include: [
-        "./src/**/*"
-      ],
-      exclude: [
-        "./node_modules"
-      ]
+      include: ["./src/**/*"],
+      exclude: ["./node_modules"]
     })
     .save();
 

@@ -51,7 +51,6 @@ const overrides = [
   }
 ];
 
-
 function task(config: Config) {
   const { eslintRules, env } = config.values();
 

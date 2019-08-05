@@ -20,10 +20,7 @@ const WEBPACK_CONFIG_FILE_NAME = "webpack.config.js";
 const POST_CSS_CONFIG_FILE_NAME = "postcss.config.js";
 
 function task(config: Config) {
-  copyFiles(__dirname, [
-    WEBPACK_CONFIG_FILE_NAME,
-    POST_CSS_CONFIG_FILE_NAME,
-  ]);
+  copyFiles(__dirname, [WEBPACK_CONFIG_FILE_NAME, POST_CSS_CONFIG_FILE_NAME]);
 
   install(packages);
 

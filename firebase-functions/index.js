@@ -9,7 +9,7 @@ function task(config) {
         name: "functions",
         engines: {
             node: "10"
-        },
+        }
     })
         .appendScript("build", "npx tsc")
         .appendScript("serve", "yarn build && firebase serve --only functions")

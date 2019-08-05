@@ -10,7 +10,7 @@ function task(config: Config) {
       name: "functions",
       engines: {
         node: "10"
-      },
+      }
     })
     .appendScript("build", "npx tsc")
     .appendScript("serve", "yarn build && firebase serve --only functions")
@@ -28,8 +28,8 @@ function task(config: Config) {
     })
     .save();
 
-  install(packages, { dev : false });
-  install(devPackages, { dev : true });
+  install(packages, { dev: false });
+  install(devPackages, { dev: true });
 }
 task.description = "Add Firebase Functions";
 

@@ -3,7 +3,7 @@ import { Config } from "../lib/config";
 
 const COPY_FILES = [
   // Cloud Function may create a default file which ignores dist/
-  ".gcloudignore",
+  ".gcloudignore"
 ];
 
 const packages = ["@google-cloud/functions-framework"];
