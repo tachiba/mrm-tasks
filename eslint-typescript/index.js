@@ -65,7 +65,7 @@ function task(config) {
         .add(eslintIgnores)
         .save();
     mrm_core_1.packageJson()
-        .setScript("lint", "eslint . --cache --fix --ext .ts,.tsx")
+        .setScript("lint", "eslint ./src --cache --fix --ext .ts,.tsx")
         .prependScript("pretest", "npm run lint")
         .save();
     mrm_core_1.install(packages);

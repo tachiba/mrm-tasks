@@ -75,7 +75,7 @@ function task(config: Config) {
     .save();
 
   packageJson()
-    .setScript("lint", "eslint . --cache --fix --ext .ts,.tsx")
+    .setScript("lint", "eslint ./src --cache --fix --ext .ts,.tsx")
     .prependScript("pretest", "npm run lint")
     .save();
 
