@@ -39,7 +39,20 @@ const eslintDefaultRules = {
   "no-undef": "off",
 
   // eslint-plugin-node is not works properly??
-  "import/no-unresolved": "off"
+  "import/no-unresolved": "off",
+
+  // Allow an empty constructor with parameter properties
+  "no-empty-function": [
+    "error",
+    {
+      "allow": [
+        "constructors"
+      ]
+    }
+  ],
+  "@typescript-eslint/no-parameter-properties": "off",
+  "no-useless-constructor": "off",
+  "@typescript-eslint/no-useless-constructor": "error",
 };
 const overrides = [
   {
