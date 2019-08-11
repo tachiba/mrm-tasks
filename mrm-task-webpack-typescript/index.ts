@@ -1,5 +1,4 @@
 import { install, packageJson, copyFiles } from "mrm-core";
-import { Config } from "../lib/config";
 
 const packages = [
   "webpack",
@@ -19,7 +18,7 @@ const packages = [
 const WEBPACK_CONFIG_FILE_NAME = "webpack.config.js";
 const POST_CSS_CONFIG_FILE_NAME = "postcss.config.js";
 
-function task(config: Config) {
+function task() {
   copyFiles(__dirname, [WEBPACK_CONFIG_FILE_NAME, POST_CSS_CONFIG_FILE_NAME]);
 
   install(packages);

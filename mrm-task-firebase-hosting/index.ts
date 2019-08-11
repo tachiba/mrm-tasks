@@ -1,7 +1,6 @@
 import { packageJson } from "mrm-core";
-import { Config } from "../lib/config";
 
-function task(config: Config) {
+function task() {
   packageJson()
     .appendScript("deploy", "firebase deploy --only hosting")
     .save();

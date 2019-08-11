@@ -1,10 +1,9 @@
 import { install, json, packageJson } from "mrm-core";
-import { Config } from "../lib/config";
 
 const packages = ["firebase-admin", "firebase-functions"];
 const devPackages = ["firebase-functions-test"];
 
-function task(config: Config) {
+function task() {
   packageJson()
     .merge({
       name: "functions",

@@ -3,6 +3,3 @@ node_modules/
 
 index.js
 index.d.ts
-
-lib/config.js
-lib/config.d.ts

@@ -1,9 +1,8 @@
 import { lines, packageJson, install, file, json } from "mrm-core";
-import { Config } from "../lib/config";
 
 const packages = ["jest", "ts-jest", "@types/jest"];
 
-function task(config: Config) {
+function task(config: { values: () => { typescriptOutDir?: string, node?: boolean } }) {
   const configValues = config.values();
   const outDir = configValues.typescriptOutDir || "dist";
 

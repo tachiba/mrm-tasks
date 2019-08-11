@@ -1,5 +1,4 @@
 import { copyFiles, install, json } from "mrm-core";
-import { Config } from "../lib/config";
 
 const COPY_FILES = [
   // Cloud Function may create a default file which ignores dist/
@@ -9,7 +8,7 @@ const COPY_FILES = [
 const packages = ["@google-cloud/functions-framework"];
 const devPackages = ["@types/express"];
 
-function task(config: Config) {
+function task() {
   copyFiles(__dirname, COPY_FILES);
 
   json("tsconfig.json")

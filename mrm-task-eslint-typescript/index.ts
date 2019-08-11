@@ -1,5 +1,4 @@
 import { json, packageJson, lines, install } from "mrm-core";
-import { Config } from "../lib/config";
 
 const configFile = ".eslintrc.json";
 const packages = [
@@ -67,7 +66,7 @@ const overrides = [
   }
 ];
 
-function task(config: Config) {
+function task(config: { values: () => { env?: string, eslintRules?: any } }) {
   const { eslintRules, env } = config.values();
 
   const eslintrc = json(configFile);

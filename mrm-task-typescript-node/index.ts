@@ -1,9 +1,8 @@
 import { json, packageJson, install } from "mrm-core";
-import { Config } from "../lib/config";
 
 const packages = ["typescript", "@types/node"];
 
-function task(config: Config) {
+function task(config: { values: () => { typescriptOutDir?: string } }) {
   const configValues = config.values();
   const outDir = configValues.typescriptOutDir || "dist";
 
