@@ -1,2 +1,8 @@
 node_modules/
 .eslintcache
+
+index.js
+index.d.ts
+
+lib/config.js
+lib/config.d.ts
