@@ -8,6 +8,8 @@ interface ConfigValues {
   eslintRules: any;
 
   env: string | undefined;
+
+  node: boolean | undefined;
 }
 
 export { ConfigValues, Config };
