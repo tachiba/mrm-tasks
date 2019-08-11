@@ -28,7 +28,10 @@ const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
 const eslintDefaultRules = {
     // TypeScript
     // False positive?
-    "consistent-return": "off",
+    // `treatUndefinedAsUnspecified` is not working with TypeScript
+    "consistent-return": ["off", {
+            "treatUndefinedAsUnspecified": false
+        }],
     // False positive?
     // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
     "no-undef": "off",
