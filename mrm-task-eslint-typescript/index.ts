@@ -15,8 +15,11 @@ const packages = [
 ];
 const eslintExtends = [
   "airbnb-base",
+  // SEE: https://github.com/benmosher/eslint-plugin-import#typescript
+  // https://github.com/benmosher/eslint-plugin-import/tree/master/config
+  "plugin:import/errors",
+  "plugin:import/warnings",
   "plugin:import/typescript",
-
   // SEE: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#usage-with-prettier
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/recommended.json
   "plugin:@typescript-eslint/recommended",
@@ -39,9 +42,6 @@ const eslintDefaultRules = {
   // False positive?
   // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
   "no-undef": "off",
-
-  // eslint-plugin-node is not works properly??
-  "import/no-unresolved": "off",
 
   // Allow an empty constructor with parameter properties
   "no-empty-function": [
