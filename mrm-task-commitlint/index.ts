@@ -1,7 +1,8 @@
 import { packageJson, install, copyFiles } from "mrm-core";
 
 const COPY_FILES = [
-  "commitlint.config.js"
+  "commitlint.config.js",
+  "tachiba/commitlint-config-emoji"
 ];
 
 const packages = ["@commitlint/cli", "@commitlint/config-conventional"];
