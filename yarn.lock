@@ -1220,10 +1220,10 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mrm-core@^3.1.2, mrm-core@^3.3.0, mrm-core@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/mrm-core/-/mrm-core-3.3.3.tgz#73aad800a44ba2a1f6c49c0b85aaf70612bf40f9"
-  integrity sha512-CUvDmlbrbVhdoZ2yD2fK4Oey7VS7fT5GZkTd6U7qTnmOzXKfyVkgpYRJgr3dkNbPG6deTdzbVv0QTDvl1KDdZg==
+mrm-core@^3.1.2, mrm-core@^3.3.0, mrm-core@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/mrm-core/-/mrm-core-3.3.4.tgz#0f23b28c32e09723959678771f417ba8c6209e48"
+  integrity sha512-vTywqjBrQIDlRuoww+xspvm/be272c2M54VY2GWY4NCZtSSG3uY6zyEuQekKANM5HEKc8WVn+jQGHmdETQCtww==
   dependencies:
     babel-code-frame "^6.26.0"
     comment-json "^1.1.3"
