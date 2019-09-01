@@ -64,6 +64,13 @@ const overrides = [
       "no-useless-constructor": "off",
       "@typescript-eslint/no-useless-constructor": "error",
     }
+  },
+  {
+    // JSON
+    "files": ["*.json"],
+    "rules": {
+      "no-unused-expressions": "off"
+    }
   }
 ];
 
