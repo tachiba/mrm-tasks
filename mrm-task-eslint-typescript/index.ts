@@ -31,37 +31,38 @@ const eslintExtends = [
 ];
 const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
 const eslintDefaultRules = {
-  // TypeScript
 
-  // False positive?
-  // `treatUndefinedAsUnspecified` is not working with TypeScript
-  "consistent-return": ["off", {
-    "treatUndefinedAsUnspecified": false
-  }],
-
-  // False positive?
-  // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
-  "no-undef": "off",
-
-  // Allow an empty constructor with parameter properties
-  "no-empty-function": [
-    "error",
-    {
-      "allow": [
-        "constructors"
-      ]
-    }
-  ],
-  "@typescript-eslint/no-parameter-properties": "off",
-  "no-useless-constructor": "off",
-  "@typescript-eslint/no-useless-constructor": "error",
 };
 const overrides = [
   {
-    // https://github.com/typescript-eslint/typescript-eslint/issues/291
+    // TypeScript
     files: ["*.ts", "*.tsx"],
     rules: {
-      "no-dupe-class-members": "off"
+      // https://github.com/typescript-eslint/typescript-eslint/issues/291
+      "no-dupe-class-members": "off",
+
+      // False positive?
+      // `treatUndefinedAsUnspecified` is not working with TypeScript
+      "consistent-return": ["off", {
+        "treatUndefinedAsUnspecified": false
+      }],
+
+      // False positive?
+      // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
+      "no-undef": "off",
+
+      // Allow an empty constructor with parameter properties
+      "no-empty-function": [
+        "error",
+        {
+          "allow": [
+            "constructors"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-parameter-properties": "off",
+      "no-useless-constructor": "off",
+      "@typescript-eslint/no-useless-constructor": "error",
     }
   }
 ];
