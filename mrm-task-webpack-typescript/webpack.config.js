@@ -37,6 +37,18 @@ module.exports = (env, options) => {
               loader: "postcss-loader"
             }
           ]
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+            {
+              loader: "file-loader"
+            }
+          ]
+        },
+        {
+          test: /\.(html)$/,
+          use: "html-loader"
         }
       ]
     },

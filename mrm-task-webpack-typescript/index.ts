@@ -12,7 +12,9 @@ const packages = [
   "postcss-preset-env",
   "style-loader",
   "postcss-loader",
-  "css-loader"
+  "css-loader",
+  "file-loader",
+  "html-loader"
 ];
 
 const WEBPACK_CONFIG_FILE_NAME = "webpack.config.js";
