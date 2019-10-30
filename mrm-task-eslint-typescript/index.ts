@@ -29,7 +29,7 @@ const eslintExtends = [
   // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
   "prettier/@typescript-eslint"
 ];
-const eslintIgnores = ["**/__tests__/*.ts", "node_modules/"];
+const eslintIgnores = ["node_modules/"];
 const eslintDefaultRules = {
 
 };
@@ -70,6 +70,13 @@ const overrides = [
     "files": ["*.json"],
     "rules": {
       "no-unused-expressions": "off"
+    }
+  },
+  {
+    // Test
+    "files": ["*.test.ts"],
+    "rules": {
+      "@typescript-eslint/camelcase": "off"
     }
   }
 ];
