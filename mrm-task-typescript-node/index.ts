@@ -11,8 +11,8 @@ function task(config: { values: () => { typescriptOutDir?: string } }) {
       compilerOptions: {
         outDir: `./${outDir}`,
 
-        // nodejs10
-        target: "es2018",
+        // node.js 12
+        target: "es2019",
 
         moduleResolution: "node",
 
@@ -36,6 +36,6 @@ function task(config: { values: () => { typescriptOutDir?: string } }) {
 
   install(packages);
 }
-task.description = "Add TypeScript for nodejs10";
+task.description = "Add TypeScript for node.js";
 
 module.exports = task;
