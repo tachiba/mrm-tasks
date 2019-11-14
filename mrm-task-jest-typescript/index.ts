@@ -1,4 +1,4 @@
-import { lines, packageJson, install, file, json } from "mrm-core";
+import { lines, packageJson, install, file } from "mrm-core";
 
 const packages = ["jest", "ts-jest", "@types/jest"];
 
@@ -37,10 +37,6 @@ function task(config: { values: () => { typescriptOutDir?: string, node?: boolea
   // TODO React Implement later
 
   pkg.save();
-
-  json("tsconfig.json").merge({
-    exclude: ["**/__tests__/*"]
-  });
 
   if (!pkg.get("private")) {
     lines(".npmignore")
