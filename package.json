@@ -18,7 +18,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "mrm": "^1.2.3",
-    "mrm-task-license": "^1.2.3",
+    "mrm-task-license": "^2.0.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.2"
   },
