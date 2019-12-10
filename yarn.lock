@@ -1605,10 +1605,10 @@ mrm-task-typescript@^2.0.0:
   dependencies:
     mrm-core "^4.0.0"
 
-mrm@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mrm/-/mrm-2.0.0.tgz#fc428dbffecec4d7425c91b8e5f92a2b3a02e666"
-  integrity sha512-NJnrcB/tdSf5XhbrgWT9NDF06UQlBQYpui1PDDp6b1KPYzwfdR4wI1I1QG5jsbVpIGbgVKb3F6zqimMfB6Xg6A==
+mrm@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/mrm/-/mrm-2.0.1.tgz#67dab3f227803eb3b0c372680a3c56d669280c28"
+  integrity sha512-ioFIk9gfsbjv2pbPykapKb9tTA5q6SkMDBblTGSchYeiTVudaawEiVuLd19i6drKsUxuWILWLWN4CmIaBa0x+Q==
   dependencies:
     git-username "^1.0.0"
     glob "^7.1.6"
