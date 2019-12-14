@@ -38,6 +38,17 @@ const overrides = [
     // TypeScript
     files: ["*.ts", "*.tsx"],
     rules: {
+      // Allow omitting TypeScript file extension
+      // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js#L139
+      // https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
+      "import/extensions": ["error", "ignorePackages", {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }],
+
       // https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
 
