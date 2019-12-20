@@ -20,7 +20,7 @@
     "mrm": "^2.0.2",
     "mrm-task-license": "^2.0.0",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "pretest": "npm run lint && tsc --noEmit",
