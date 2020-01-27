@@ -1533,10 +1533,10 @@ mrm-task-license@^2.0.0:
     mrm-core "^4.0.0"
     user-meta "^1.0.0"
 
-mrm-task-license@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/mrm-task-license/-/mrm-task-license-3.0.0.tgz#33e84586dcca54e2ac74f7b1a2b1a51f75e13ceb"
-  integrity sha512-ReMH6lGHEJ/PVOQGwLCRTUUKTLk6fmIzRk6QnKiK1Z+PrcyARSih9V/DR4/gk1h2oAACu+eKjv8ish4F8eiRag==
+mrm-task-license@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mrm-task-license/-/mrm-task-license-3.0.1.tgz#c5e817444d1e2629e6ef12bfbacf47e426f8aaed"
+  integrity sha512-TPs/3uVCx/EAJtipRpHXC3DXH/AKH/8srovJu/2y0kfSluoDPv3voG2vnRCxrAq947PRbYouzr4Fe1a4R+kz4g==
   dependencies:
     mrm-core "^4.0.0"
     user-meta "^1.0.0"
