@@ -74,6 +74,11 @@ const overrides = [
       "@typescript-eslint/no-parameter-properties": "off",
       "no-useless-constructor": "off",
       "@typescript-eslint/no-useless-constructor": "error",
+
+      // False positive with TypeScript optional chaining
+      // https://github.com/typescript-eslint/typescript-eslint/issues/1220
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "error"
     }
   },
   {
