@@ -1067,10 +1067,10 @@ ini@^1.3.4, ini@~1.3.0:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
 
-inquirer@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.0.tgz#9e2b032dde77da1db5db804758b8fea3a970519a"
-  integrity sha512-rSdC7zelHdRQFkWnhsMu2+2SO41mpv2oF2zy4tMhmiLWkcKbOAs87fWAJhVXttKVwhdZvymvnuM95EyEXg2/tQ==
+inquirer@^7.0.0, inquirer@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-7.0.4.tgz#99af5bde47153abca23f5c7fc30db247f39da703"
+  integrity sha512-Bu5Td5+j11sCkqfqmUTiwv+tWisMtP0L7Q8WrqA2C/BbBhy1YTdFrvjjlrKq8oagA/tLQBski2Gcx/Sqyi2qSQ==
   dependencies:
     ansi-escapes "^4.2.1"
     chalk "^2.4.2"
@@ -1081,7 +1081,7 @@ inquirer@^7.0.0:
     lodash "^4.17.15"
     mute-stream "0.0.8"
     run-async "^2.2.0"
-    rxjs "^6.4.0"
+    rxjs "^6.5.3"
     string-width "^4.1.0"
     strip-ansi "^5.1.0"
     through "^2.3.6"
@@ -1606,13 +1606,14 @@ mrm-task-typescript@^2.0.2:
   dependencies:
     mrm-core "^4.0.0"
 
-mrm@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/mrm/-/mrm-2.0.4.tgz#123ab0746c9f178a0e3a5d222580b04dfd5516c4"
-  integrity sha512-lZmIh2R0I643GgYdSM9/R4p6Uvv4jjkZJkXiFkUlQVIFzEywmFKpxPcZRnIFRzVqKQ9v+1joxMoAFRwK73OlQw==
+mrm@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mrm/-/mrm-2.1.0.tgz#9e242b57e48272e336f4d3dbc0a389197062e075"
+  integrity sha512-3+CgNmSpGqKm1VvGqeVLI7FxAK3VzuY7kwnS3xg/QJN+2V2SPemFAcwH7vAy+aR1boZZisse/b2/+U9D+5Up0w==
   dependencies:
     git-username "^1.0.0"
     glob "^7.1.6"
+    inquirer "^7.0.4"
     is-directory "^0.3.1"
     kleur "^3.0.3"
     listify "^1.0.0"
@@ -2091,10 +2092,10 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
-rxjs@^6.4.0:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
-  integrity sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
+rxjs@^6.5.3:
+  version "6.5.4"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.4.tgz#e0777fe0d184cec7872df147f303572d414e211c"
+  integrity sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==
   dependencies:
     tslib "^1.9.0"
 
