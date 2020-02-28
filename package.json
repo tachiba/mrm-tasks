@@ -6,7 +6,7 @@
   "author": "Takashi Chiba <work@tachiba.jp>",
   "license": "MIT",
   "dependencies": {
-    "mrm-core": "^3.3.4"
+    "mrm-core": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^13.7.7",
