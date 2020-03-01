@@ -58,6 +58,9 @@ const overrides = [
         "treatUndefinedAsUnspecified": false
       }],
 
+      // https://github.com/typescript-eslint/typescript-eslint/issues/600
+      "spaced-comment": ["error", "always", { "markers": ["/"] }],
+
       // False positive?
       // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
       "no-undef": "off",
