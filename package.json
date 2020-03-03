@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "npx lerna exec -- yarn lint",
-    "build": "npx lerna exec -- npx tsc"
+    "build": "npx lerna exec -- yarn build"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
