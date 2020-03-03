@@ -51,13 +51,16 @@ const overrides = [
         }
       ],
 
+      // https://github.com/typescript-eslint/typescript-eslint/issues/600
+      "spaced-comment": ["error", "always", { markers: ["/"] }],
+
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
       // Fixed https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
       "@typescript-eslint/no-dupe-class-members": ["error"],
 
-      // False positive?
-      // `treatUndefinedAsUnspecified` is not working with TypeScript
+      // False positive with TypeScript
+      // `treatUndefinedAsUnspecified` is not working properly
       "consistent-return": [
         "off",
         {
@@ -65,12 +68,14 @@ const overrides = [
         }
       ],
 
-      // https://github.com/typescript-eslint/typescript-eslint/issues/600
-      "spaced-comment": ["error", "always", { markers: ["/"] }],
-
-      // False positive?
+      // False positive with TypeScript
       // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
       "no-undef": "off",
+
+      // False positive with TypeScript optional chaining
+      // https://github.com/typescript-eslint/typescript-eslint/issues/1220
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "error",
 
       // Allow an empty constructor with parameter properties
       "no-empty-function": [
@@ -81,12 +86,7 @@ const overrides = [
       ],
       "@typescript-eslint/no-parameter-properties": "off",
       "no-useless-constructor": "off",
-      "@typescript-eslint/no-useless-constructor": "error",
-
-      // False positive with TypeScript optional chaining
-      // https://github.com/typescript-eslint/typescript-eslint/issues/1220
-      "no-unused-expressions": "off",
-      "@typescript-eslint/no-unused-expressions": "error"
+      "@typescript-eslint/no-useless-constructor": "error"
     }
   },
   {
