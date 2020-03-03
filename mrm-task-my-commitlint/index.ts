@@ -1,10 +1,12 @@
 import { packageJson, install, copyFiles } from "mrm-core";
 
-const COPY_FILES = [
-  "commitlint.config.js",
-];
+const COPY_FILES = ["commitlint.config.js"];
 
-const packages = ["@commitlint/cli", "@commitlint/config-conventional", "tachiba/commitlint-config-emoji"];
+const packages = [
+  "@commitlint/cli",
+  "@commitlint/config-conventional",
+  "tachiba/commitlint-config-emoji"
+];
 
 function task() {
   copyFiles(__dirname, COPY_FILES);
@@ -14,7 +16,7 @@ function task() {
       husky: {
         hooks: {
           "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        },
+        }
       }
     })
     .save();

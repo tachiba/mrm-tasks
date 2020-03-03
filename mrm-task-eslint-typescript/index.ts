@@ -30,9 +30,7 @@ const eslintExtends = [
   "prettier/@typescript-eslint"
 ];
 const eslintIgnores = ["node_modules/"];
-const eslintDefaultRules = {
-
-};
+const eslintDefaultRules = {};
 const overrides = [
   {
     // TypeScript
@@ -41,25 +39,32 @@ const overrides = [
       // Allow omitting TypeScript file extension
       // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js#L139
       // https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
-      "import/extensions": ["error", "ignorePackages", {
-        "js": "never",
-        "mjs": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          js: "never",
+          mjs: "never",
+          jsx: "never",
+          ts: "never",
+          tsx: "never"
+        }
+      ],
 
       // https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
 
       // False positive?
       // `treatUndefinedAsUnspecified` is not working with TypeScript
-      "consistent-return": ["off", {
-        "treatUndefinedAsUnspecified": false
-      }],
+      "consistent-return": [
+        "off",
+        {
+          treatUndefinedAsUnspecified: false
+        }
+      ],
 
       // https://github.com/typescript-eslint/typescript-eslint/issues/600
-      "spaced-comment": ["error", "always", { "markers": ["/"] }],
+      "spaced-comment": ["error", "always", { markers: ["/"] }],
 
       // False positive?
       // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
@@ -69,9 +74,7 @@ const overrides = [
       "no-empty-function": [
         "error",
         {
-          "allow": [
-            "constructors"
-          ]
+          allow: ["constructors"]
         }
       ],
       "@typescript-eslint/no-parameter-properties": "off",
@@ -86,28 +89,28 @@ const overrides = [
   },
   {
     // JSON
-    "files": ["*.json"],
-    "rules": {
+    files: ["*.json"],
+    rules: {
       "no-unused-expressions": "off"
     }
   },
   {
     // Test
-    "files": ["*.test.ts"],
-    "rules": {
+    files: ["*.test.ts"],
+    rules: {
       "@typescript-eslint/camelcase": "off"
     }
   }
 ];
 
-function task(config: { values: () => { env?: string, eslintRules?: any } }) {
+function task(config: { values: () => { env?: string; eslintRules?: any } }) {
   const { eslintRules, env } = config.values();
 
   const eslintrc = json(configFile);
   eslintrc.merge({
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
-    rules: Object.assign({}, eslintDefaultRules, eslintRules),
+    rules: { ...eslintDefaultRules, ...eslintRules },
     overrides
   });
   if (typeof env !== "undefined") {
