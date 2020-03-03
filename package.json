@@ -1,29 +1,19 @@
 {
+  "private": true,
   "name": "mrm-tasks",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "ssh://git@github.com/tachiba/mrm-tasks.git",
   "author": "Takashi Chiba <work@tachiba.jp>",
   "license": "MIT",
-  "dependencies": {
-    "mrm-core": "^3.3.4"
+  "scripts": {
+    "lint": "npx lerna exec -- yarn lint",
+    "build": "npx lerna exec -- npx tsc"
   },
   "devDependencies": {
-    "@types/node": "^13.7.7",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "mrm": "^2.1.0",
-    "mrm-task-license": "^3.0.1",
-    "prettier": "^1.19.1",
-    "typescript": "^3.8.3"
+    "lerna": "^3.20.2"
   },
-  "scripts": {
-    "pretest": "npm run lint && tsc --noEmit",
-    "lint": "eslint . --cache --fix --ext .ts,.tsx"
-  }
+  "workspaces": [
+    "mrm-task*"
+  ]
 }
