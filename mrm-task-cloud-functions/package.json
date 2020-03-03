@@ -1,0 +1,24 @@
+{
+  "name": "mrm-task-cloud-functions",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --cache --fix --ext .ts,.tsx -c ../.eslintrc.json --ignore-path ../.eslintignore"
+  },
+  "dependencies": {
+    "mrm-core": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "typescript": "^3.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  }
+}
