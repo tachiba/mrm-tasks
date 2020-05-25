@@ -86,7 +86,26 @@ const overrides = [
       ],
       "@typescript-eslint/no-parameter-properties": "off",
       "no-useless-constructor": "off",
-      "@typescript-eslint/no-useless-constructor": "error"
+      "@typescript-eslint/no-useless-constructor": "error",
+
+      // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
+      "camelcase": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "variableLike",
+          "format": ["camelCase", "UPPER_CASE"],
+          "leadingUnderscore": "allow"
+        },
+        {
+          "selector": "variableLike",
+          "format": ["PascalCase"],
+          "filter": {
+            "regex": "(Class|Klass)",
+            "match": true
+          }
+        }
+      ]
     }
   },
   {
@@ -96,13 +115,6 @@ const overrides = [
       "no-unused-expressions": "off"
     }
   },
-  {
-    // Test
-    files: ["*.test.ts"],
-    rules: {
-      "@typescript-eslint/camelcase": "off"
-    }
-  }
 ];
 
 function task(config: { values: () => { env?: string; eslintRules?: any } }) {
