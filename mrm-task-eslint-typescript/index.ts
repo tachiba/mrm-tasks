@@ -51,26 +51,19 @@ const overrides = [
         }
       ],
 
-      // https://github.com/typescript-eslint/typescript-eslint/issues/600
-      "spaced-comment": ["error", "always", { markers: ["/"] }],
-
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
       // Fixed https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
       "@typescript-eslint/no-dupe-class-members": ["error"],
 
       // False positive with TypeScript
-      // `treatUndefinedAsUnspecified` is not working properly
+      // https://github.com/typescript-eslint/typescript-eslint/issues/1277
       "consistent-return": [
         "off",
         {
           treatUndefinedAsUnspecified: false
         }
       ],
-
-      // False positive with TypeScript
-      // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/342
-      "no-undef": "off",
 
       // False positive with TypeScript optional chaining
       // https://github.com/typescript-eslint/typescript-eslint/issues/1220
@@ -89,20 +82,20 @@ const overrides = [
       "@typescript-eslint/no-useless-constructor": "error",
 
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
-      "camelcase": "off",
+      camelcase: "off",
       "@typescript-eslint/naming-convention": [
         "error",
         {
-          "selector": "variableLike",
-          "format": ["camelCase", "UPPER_CASE"],
-          "leadingUnderscore": "allow"
+          selector: "variableLike",
+          format: ["camelCase", "UPPER_CASE"],
+          leadingUnderscore: "allow"
         },
         {
-          "selector": "variableLike",
-          "format": ["PascalCase"],
-          "filter": {
-            "regex": "(Class|Klass)",
-            "match": true
+          selector: "variableLike",
+          format: ["PascalCase"],
+          filter: {
+            regex: "(Class|Klass)",
+            match: true
           }
         }
       ]
@@ -114,7 +107,7 @@ const overrides = [
     rules: {
       "no-unused-expressions": "off"
     }
-  },
+  }
 ];
 
 function task(config: { values: () => { env?: string; eslintRules?: any } }) {
