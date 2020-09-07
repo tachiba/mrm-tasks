@@ -81,6 +81,13 @@ const overrides = [
       "no-useless-constructor": "off",
       "@typescript-eslint/no-useless-constructor": "error",
 
+      // https://github.com/typescript-eslint/typescript-eslint/blob/bfe255fde0cb5fe5e32c02eb5ba35d27fb23d9ea/packages/eslint-plugin/docs/rules/no-shadow.md
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": [
+        "error",
+        { ignoreTypeValueShadow: true }
+      ],
+
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
       camelcase: "off",
       "@typescript-eslint/naming-convention": [
