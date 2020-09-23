@@ -51,6 +51,10 @@ const overrides = [
         }
       ],
 
+      //
+      // Extension rules
+      //
+
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
       // Fixed https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
@@ -70,6 +74,17 @@ const overrides = [
       "no-unused-expressions": "off",
       "@typescript-eslint/no-unused-expressions": "error",
 
+      // https://github.com/typescript-eslint/typescript-eslint/blob/bfe255fde0cb5fe5e32c02eb5ba35d27fb23d9ea/packages/eslint-plugin/docs/rules/no-shadow.md
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": [
+        "error",
+        { ignoreTypeValueShadow: true }
+      ],
+
+      //
+      // Opinionated rules
+      //
+
       // Allow an empty constructor with parameter properties
       "no-empty-function": [
         "error",
@@ -80,13 +95,6 @@ const overrides = [
       "@typescript-eslint/no-parameter-properties": "off",
       "no-useless-constructor": "off",
       "@typescript-eslint/no-useless-constructor": "error",
-
-      // https://github.com/typescript-eslint/typescript-eslint/blob/bfe255fde0cb5fe5e32c02eb5ba35d27fb23d9ea/packages/eslint-plugin/docs/rules/no-shadow.md
-      "no-shadow": "off",
-      "@typescript-eslint/no-shadow": [
-        "error",
-        { ignoreTypeValueShadow: true }
-      ],
 
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
       camelcase: "off",
