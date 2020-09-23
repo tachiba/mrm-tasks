@@ -23,6 +23,7 @@ const eslintExtends = [
   // SEE: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#usage-with-prettier
   // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/recommended.json
   "plugin:@typescript-eslint/recommended",
+  "plugin:@typescript-eslint/recommended-requiring-type-checking",
   // SEE: https://prettier.io/docs/en/integrating-with-linters.html
   // https://github.com/prettier/eslint-plugin-prettier/blob/master/eslint-plugin-prettier.js
   "plugin:prettier/recommended",
