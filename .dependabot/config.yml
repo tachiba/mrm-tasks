@@ -13,5 +13,5 @@ update_configs:
           update_type: semver:minor
 
     commit_message:
-      prefix: ⚙️
+      prefix: chore
       include_scope: true

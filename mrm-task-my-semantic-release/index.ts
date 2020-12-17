@@ -2,10 +2,7 @@ import { install, copyFiles } from "mrm-core";
 
 const COPY_FILES = ["release.config.js"];
 
-const packages = [
-  "semantic-release",
-  "tachiba/semantic-release-angular-emoji-config"
-];
+const packages = ["semantic-release"];
 
 function task() {
   copyFiles(__dirname, COPY_FILES);

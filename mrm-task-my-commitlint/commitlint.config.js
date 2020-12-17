@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["emoji"]
+  extends: ["@commitlint/config-conventional"]
 };

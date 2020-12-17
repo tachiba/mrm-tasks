@@ -1,3 +1,14 @@
 module.exports = {
-  extends: "semantic-release-angular-emoji-config"
+  plugins: [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/github",
+      {
+        successComment: false,
+        failComment: false,
+        labels: false
+      }
+    ]
+  ]
 };
