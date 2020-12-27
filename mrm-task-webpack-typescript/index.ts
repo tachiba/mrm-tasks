@@ -27,7 +27,7 @@ function task() {
 
   packageJson()
     .setScript("build", "npx webpack --mode production")
-    .setScript("start", "node_modules/.bin/webpack-dev-server --open")
+    .setScript("start", "npx webpack serve")
     .set("sideEffects", false)
     .save();
 }
