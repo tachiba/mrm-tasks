@@ -82,6 +82,10 @@ const overrides = [
         { ignoreTypeValueShadow: true }
       ],
 
+      // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+
       //
       // Opinionated rules
       //
