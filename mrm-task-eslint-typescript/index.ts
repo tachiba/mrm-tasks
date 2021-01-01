@@ -30,7 +30,7 @@ const eslintExtends = [
   // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
   "prettier/@typescript-eslint"
 ];
-const eslintIgnores = ["node_modules/"];
+const eslintIgnores = ["*.config.js", "node_modules/", "coverage/"];
 const eslintDefaultRules = {};
 const overrides = [
   {
