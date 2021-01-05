@@ -107,16 +107,8 @@ const overrides = [
         "error",
         {
           selector: "variableLike",
-          format: ["camelCase", "UPPER_CASE"],
+          format: ["camelCase", "UPPER_CASE", "PascalCase"],
           leadingUnderscore: "allow"
-        },
-        {
-          selector: "variableLike",
-          format: ["PascalCase"],
-          filter: {
-            regex: "(Class|Klass)",
-            match: true
-          }
         }
       ]
     }
