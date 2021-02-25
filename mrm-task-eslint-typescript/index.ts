@@ -26,9 +26,8 @@ const eslintExtends = [
   "plugin:@typescript-eslint/recommended-requiring-type-checking",
   // SEE: https://prettier.io/docs/en/integrating-with-linters.html
   // https://github.com/prettier/eslint-plugin-prettier/blob/master/eslint-plugin-prettier.js
-  "plugin:prettier/recommended",
-  // https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
-  "prettier/@typescript-eslint"
+  // https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
+  "plugin:prettier/recommended"
 ];
 const eslintIgnores = ["*.config.js", "node_modules/", "coverage/"];
 const eslintDefaultRules = {};
