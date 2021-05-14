@@ -16,7 +16,7 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "mrm-core": "^4"
+    "mrm-core": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "13.13.52",
