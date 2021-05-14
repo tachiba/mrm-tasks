@@ -11,7 +11,7 @@
     "build": "npx lerna exec -- yarn build"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "4.0.0"
   },
   "workspaces": [
     "mrm-task*"
