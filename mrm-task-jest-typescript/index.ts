@@ -13,14 +13,14 @@ function task(config: {
     scripts: {
       "test:jest": "jest",
       "test:watch": "jest --watch",
-      "test:coverage": "jest --coverage"
+      "test:coverage": "jest --coverage",
     },
     jest: {
       clearMocks: true,
       globals: {
         "ts-jest": {
-          tsConfig: "tsconfig.json"
-        }
+          tsConfig: "tsconfig.json",
+        },
       },
       moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
       preset: "ts-jest/presets/default",
@@ -28,9 +28,9 @@ function task(config: {
       testMatch: ["**/__tests__/*.+(ts|tsx|js|jsx)"],
       testPathIgnorePatterns: ["/node_modules/", `<rootDir>/${outDir}/`],
       transform: {
-        "^.+\\.tsx?$": "ts-jest"
-      }
-    }
+        "^.+\\.tsx?$": "ts-jest",
+      },
+    },
   });
 
   pkg.appendScript("test", "npm run test:jest");
@@ -41,9 +41,7 @@ function task(config: {
   pkg.save();
 
   if (!pkg.get("private")) {
-    lines(".npmignore")
-      .add("__tests__/")
-      .save();
+    lines(".npmignore").add("__tests__/").save();
   }
 
   if (pkg.get(`devDependencies.eslint`)) {

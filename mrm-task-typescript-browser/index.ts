@@ -22,16 +22,14 @@ function task(config: { values: () => { typescriptOutDir?: string } }) {
         emitDecoratorMetadata: true,
 
         pretty: true,
-        sourceMap: true
+        sourceMap: true,
       },
       include: ["./src/**/*"],
-      exclude: ["./node_modules"]
+      exclude: ["./node_modules"],
     })
     .save();
 
-  packageJson()
-    .set("main", `${outDir}/index.js`)
-    .save();
+  packageJson().set("main", `${outDir}/index.js`).save();
 
   install(packages);
 }

@@ -2,7 +2,7 @@ import { copyFiles, install, json } from "mrm-core";
 
 const COPY_FILES = [
   // Cloud Function may create a default file which ignores dist/
-  ".gcloudignore"
+  ".gcloudignore",
 ];
 
 const packages = ["@google-cloud/functions-framework"];
@@ -14,17 +14,17 @@ function task() {
   json("tsconfig.json")
     .merge({
       compilerOptions: {
-        module: "commonjs"
-      }
+        module: "commonjs",
+      },
     })
     .save();
 
   install(packages, {
-    dev: false
+    dev: false,
   });
 
   install(devPackages, {
-    dev: true
+    dev: true,
   });
 }
 

@@ -14,7 +14,7 @@ const packages = [
   "postcss-loader",
   "css-loader",
   "file-loader",
-  "html-loader"
+  "html-loader",
 ];
 
 const WEBPACK_CONFIG_FILE_NAME = "webpack.config.js";
