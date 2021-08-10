@@ -11,7 +11,7 @@ const packages = [
   "eslint-plugin-import",
   "eslint-plugin-prettier",
 
-  "prettier"
+  "prettier",
 ];
 const eslintExtends = [
   "airbnb-base",
@@ -27,7 +27,7 @@ const eslintExtends = [
   // SEE: https://prettier.io/docs/en/integrating-with-linters.html
   // https://github.com/prettier/eslint-plugin-prettier/blob/master/eslint-plugin-prettier.js
   // https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
-  "plugin:prettier/recommended"
+  "plugin:prettier/recommended",
 ];
 const eslintIgnores = ["*.config.js", "node_modules/", "coverage/"];
 const eslintDefaultRules = {};
@@ -47,8 +47,8 @@ const overrides = [
           mjs: "never",
           jsx: "never",
           ts: "never",
-          tsx: "never"
-        }
+          tsx: "never",
+        },
       ],
 
       //
@@ -65,8 +65,8 @@ const overrides = [
       "consistent-return": [
         "off",
         {
-          treatUndefinedAsUnspecified: false
-        }
+          treatUndefinedAsUnspecified: false,
+        },
       ],
 
       // False positive with TypeScript optional chaining
@@ -78,7 +78,7 @@ const overrides = [
       "no-shadow": "off",
       "@typescript-eslint/no-shadow": [
         "error",
-        { ignoreTypeValueShadow: true }
+        { ignoreTypeValueShadow: true },
       ],
 
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md
@@ -93,8 +93,8 @@ const overrides = [
       "no-empty-function": [
         "error",
         {
-          allow: ["constructors"]
-        }
+          allow: ["constructors"],
+        },
       ],
       "@typescript-eslint/no-parameter-properties": "off",
       "no-useless-constructor": "off",
@@ -107,18 +107,18 @@ const overrides = [
         {
           selector: "variableLike",
           format: ["camelCase", "UPPER_CASE", "PascalCase"],
-          leadingUnderscore: "allow"
-        }
-      ]
-    }
+          leadingUnderscore: "allow",
+        },
+      ],
+    },
   },
   {
     // JSON
     files: ["*.json"],
     rules: {
-      "no-unused-expressions": "off"
-    }
-  }
+      "no-unused-expressions": "off",
+    },
+  },
 ];
 
 function task(config: { values: () => { env?: string; eslintRules?: any } }) {
@@ -129,20 +129,18 @@ function task(config: { values: () => { env?: string; eslintRules?: any } }) {
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
     rules: { ...eslintDefaultRules, ...eslintRules },
-    overrides
+    overrides,
   });
   if (typeof env !== "undefined") {
     eslintrc.merge({
       env: {
-        [env]: true
-      }
+        [env]: true,
+      },
     });
   }
   eslintrc.save();
 
-  lines(".eslintignore")
-    .add(eslintIgnores)
-    .save();
+  lines(".eslintignore").add(eslintIgnores).save();
 
   packageJson()
     .setScript("lint", "eslint ./src --cache --fix --ext .ts,.tsx")

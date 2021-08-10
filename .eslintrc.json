@@ -25,11 +25,20 @@
     "@typescript-eslint/no-parameter-properties": "off",
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
-    "@typescript-eslint/camelcase": [
+    "@typescript-eslint/naming-convention": [
       "error",
       {
-        "properties": "never",
-        "ignoreDestructuring": true
+        "selector": "variableLike",
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "variableLike",
+        "format": ["PascalCase"],
+        "filter": {
+          "regex": "(Class|Klass)",
+          "match": true
+        }
       }
     ]
   },
@@ -96,7 +105,7 @@
         "*.test.ts"
       ],
       "rules": {
-        "@typescript-eslint/camelcase": "off"
+        "@typescript-eslint/naming-convention": "off"
       }
     }
   ]
