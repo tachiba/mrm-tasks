@@ -8,10 +8,11 @@ function task() {
       compilerOptions: {
         outDir: `./dist`,
 
-        // node.js 12
-        target: "es2019",
-
-        moduleResolution: "node",
+        // https://github.com/tsconfig/bases/blob/main/bases/node14.json
+        target: "es2020",
+        // You may need to add "dom" if it runs browser tests
+        lib: ["ES2020"],
+        module: "commonjs",
 
         strict: true,
         noUnusedLocals: true,
