@@ -61,4 +61,5 @@ function task({ node }: { node: boolean }) {
 task.description = "Add Jest";
 
 module.exports = task;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 module.exports.parameters = parameters;

@@ -158,4 +158,5 @@ function task({ env }: { env: string }) {
 task.description = "Add ESLint";
 
 module.exports = task;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 module.exports.parameters = parameters;

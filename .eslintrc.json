@@ -5,43 +5,13 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "rules": {
-    "no-console": "off",
-    "no-await-in-loop": "off",
-    "import/prefer-default-export": "off",
-    "no-empty-function": [
-      "error",
-      {
-        "allow": [
-          "constructors"
-        ]
-      }
-    ],
-    "@typescript-eslint/no-parameter-properties": "off",
-    "no-useless-constructor": "off",
-    "@typescript-eslint/no-useless-constructor": "error",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "variableLike",
-        "format": ["camelCase", "UPPER_CASE"],
-        "leadingUnderscore": "allow"
-      },
-      {
-        "selector": "variableLike",
-        "format": ["PascalCase"],
-        "filter": {
-          "regex": "(Class|Klass)",
-          "match": true
-        }
-      }
-    ]
-  },
+  "rules": {},
   "overrides": [
     {
       "files": [
@@ -61,22 +31,28 @@
           }
         ],
         "no-dupe-class-members": "off",
+        "@typescript-eslint/no-dupe-class-members": [
+          "error"
+        ],
         "consistent-return": [
           "off",
           {
             "treatUndefinedAsUnspecified": false
           }
         ],
-        "spaced-comment": [
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": "error",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": [
           "error",
-          "always",
           {
-            "markers": [
-              "/"
-            ]
+            "ignoreTypeValueShadow": true
           }
         ],
-        "no-undef": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": [
+          "error"
+        ],
         "no-empty-function": [
           "error",
           {
@@ -88,8 +64,19 @@
         "@typescript-eslint/no-parameter-properties": "off",
         "no-useless-constructor": "off",
         "@typescript-eslint/no-useless-constructor": "error",
-        "no-unused-expressions": "off",
-        "@typescript-eslint/no-unused-expressions": "error"
+        "camelcase": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variableLike",
+            "format": [
+              "camelCase",
+              "UPPER_CASE",
+              "PascalCase"
+            ],
+            "leadingUnderscore": "allow"
+          }
+        ]
       }
     },
     {
@@ -99,14 +86,9 @@
       "rules": {
         "no-unused-expressions": "off"
       }
-    },
-    {
-      "files": [
-        "*.test.ts"
-      ],
-      "rules": {
-        "@typescript-eslint/naming-convention": "off"
-      }
     }
-  ]
+  ],
+  "env": {
+    "node": true
+  }
 }
