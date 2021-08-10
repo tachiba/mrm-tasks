@@ -2,14 +2,11 @@ import { json, packageJson, install } from "mrm-core";
 
 const packages = ["typescript", "@types/node"];
 
-function task(config: { values: () => { typescriptOutDir?: string } }) {
-  const configValues = config.values();
-  const outDir = configValues.typescriptOutDir || "dist";
-
+function task() {
   json("tsconfig.json")
     .merge({
       compilerOptions: {
-        outDir: `./${outDir}`,
+        outDir: `./dist`,
 
         // node.js 12
         target: "es2019",
@@ -30,7 +27,7 @@ function task(config: { values: () => { typescriptOutDir?: string } }) {
     })
     .save();
 
-  packageJson().set("main", `${outDir}/index.js`).save();
+  packageJson().set("main", `dist/index.js`).save();
 
   install(packages);
 }

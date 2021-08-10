@@ -2,12 +2,14 @@ import { lines, packageJson, install, file } from "mrm-core";
 
 const packages = ["jest", "ts-jest", "@types/jest"];
 
-function task(config: {
-  values: () => { typescriptOutDir?: string; node?: boolean };
-}) {
-  const configValues = config.values();
-  const outDir = configValues.typescriptOutDir || "dist";
+const parameters = {
+  node: {
+    type: "input",
+    default: true,
+  },
+};
 
+function task({ node }: { node: boolean }) {
   // package.json
   const pkg = packageJson().merge({
     scripts: {
@@ -24,9 +26,9 @@ function task(config: {
       },
       moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
       preset: "ts-jest/presets/default",
-      testEnvironment: configValues.node ? "node" : undefined,
+      testEnvironment: node ? "node" : undefined,
       testMatch: ["**/__tests__/*.+(ts|tsx|js|jsx)"],
-      testPathIgnorePatterns: ["/node_modules/", `<rootDir>/${outDir}/`],
+      testPathIgnorePatterns: ["/node_modules/", `<rootDir>/dist/`],
       transform: {
         "^.+\\.tsx?$": "ts-jest",
       },
@@ -59,3 +61,4 @@ function task(config: {
 task.description = "Add Jest";
 
 module.exports = task;
+module.exports.parameters = parameters;

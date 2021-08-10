@@ -121,14 +121,19 @@ const overrides = [
   },
 ];
 
-function task(config: { values: () => { env?: string; eslintRules?: any } }) {
-  const { eslintRules, env } = config.values();
+const parameters = {
+  env: {
+    type: "input",
+    default: "node",
+  },
+};
 
+function task({ env }: { env: string }) {
   const eslintrc = json(configFile);
   eslintrc.merge({
     extends: eslintExtends,
     parserOptions: { project: "./tsconfig.json" },
-    rules: { ...eslintDefaultRules, ...eslintRules },
+    rules: { ...eslintDefaultRules },
     overrides,
   });
   if (typeof env !== "undefined") {
@@ -153,3 +158,4 @@ function task(config: { values: () => { env?: string; eslintRules?: any } }) {
 task.description = "Add ESLint";
 
 module.exports = task;
+module.exports.parameters = parameters;
