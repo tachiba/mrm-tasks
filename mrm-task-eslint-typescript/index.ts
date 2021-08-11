@@ -85,6 +85,9 @@ const overrides = [
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
 
+      // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
+      "no-void": ["error", { allowAsStatement: true }],
+
       //
       // Opinionated rules
       //
