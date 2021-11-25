@@ -51,6 +51,10 @@ const overrides = [
         },
       ],
 
+      // Should be allowed with TypeScript
+      // https://eslint.org/docs/rules/no-unsafe-optional-chaining
+      "no-unsafe-optional-chaining": "off",
+
       //
       // Extension rules
       //
