@@ -59,6 +59,10 @@ const overrides = [
       // Extension rules
       //
 
+      // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/default-param-last.md
+      "default-param-last": "off",
+      "@typescript-eslint/default-param-last": ["error"],
+
       // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
       // Fixed https://github.com/typescript-eslint/typescript-eslint/issues/291
       "no-dupe-class-members": "off",
